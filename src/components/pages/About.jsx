@@ -1,10 +1,10 @@
 import React from 'react'
-import Sidebar from '../layout/Sidebar'
+import Navbar from '../layout/Navbar'
 
 const About = () => {
   return (
     <div>
-        <Sidebar />
+        <Navbar />
     </div>
   )
 }

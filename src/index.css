@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-sec: #A6D1C9;
+  --color-prim: #FD7944
+}
+
 :root {
   font-family: 'Trebuchet MS';
   color: #A6D1C9;

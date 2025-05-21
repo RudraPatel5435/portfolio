@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { motion } from "framer-motion";
-import Sidebar from '../layout/Sidebar'
+import Navbar from '../layout/Navbar'
 
 const Projects = () => {
     const [isHovered, setIsHovered] = useState(false);
     return (
         <div>
-            <Sidebar />
+            <Navbar />
         </div>
     )
 }

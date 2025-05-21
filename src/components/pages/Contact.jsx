@@ -1,10 +1,10 @@
 import { motion } from "motion/react";
-import Sidebar from "../layout/Sidebar";
+import Navbar from "../layout/Navbar";
 
 function Contact() {
   return (
     <div>
-      <Sidebar />
+      <Navbar/>
 
 <div className="ml-40">
 
@@ -27,7 +27,6 @@ function Contact() {
             />
           </defs>
 
-          {/* Optional visual circle */}
           <circle cx="500" cy="500" r="400" stroke="white" strokeOpacity={1} fill="none" />
 
           <motion.g
