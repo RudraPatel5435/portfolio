@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+:root {
+  font-family: 'Trebuchet MS';
+  color: #A6D1C9;
+  background-color: #282B29;
+}
+
+::selection {
+  color: #EAEDED;
+  background-color: #333333;
+}
+
