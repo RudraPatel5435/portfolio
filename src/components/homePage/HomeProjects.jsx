@@ -38,7 +38,12 @@ const HomeProjects = () => {
 
                                 <div className="absolute bottom-0 left-0 w-full h-0 bg-sec transition-all duration-800 group-hover:h-full z-0" />
 
-                                <div className="relative z-10 h-[2.5rem] sm:h-[3rem] w-full overflow-hidden group">
+                                <motion.div
+                                    className="relative z-10 h-[2.5rem] sm:h-[3rem] w-full overflow-hidden group"
+                                    initial={{ x: -500, opacity: 0 }}
+                                    whileInView={{ x: 0, opacity: 1 }}
+                                    transition={{ type: 'spring', damping: 15 }}
+                                >
 
                                     <div className="flex items-center gap-3">
                                         <div className="text-3xl sm:text-5xl text-white group-hover:opacity-0 transition-opacity duration-300">
@@ -69,14 +74,21 @@ const HomeProjects = () => {
                                             ))}
                                         </motion.div>
                                     </div>
-                                </div>
+                                </motion.div>
                             </motion.div>
                         </Link>
                     ))
                 }
-                <Link to='projects' className='mt-8 text-lg text-sec hover:text-prim'>
-                    {`View All -->`}
-                </Link>
+                <motion.div 
+                    className='mt-8 text-lg text-sec hover:text-prim'
+                    initial={{x: -200, opacity: 0}} 
+                    whileInView={{x: 0, opacity: 1}}
+                    transition={{type: 'spring', damping: 10}}
+                >
+                    <Link to='projects' >
+                        {`View All -->`}
+                    </Link>
+                </motion.div>
             </div>
         </div>
     )

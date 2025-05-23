@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion'
 import me from '../../assets/me.jpeg'
 import { Link } from 'react-router-dom'
+import Tilt from 'react-parallax-tilt';
 
 const HomeAbout = () => {
   return (
     <>
-        <Link to='/about'>
+      <Link to='/about'>
+        <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} glareEnable={false}>
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className='relative group sm:text-xl md:text-3xl lg:text-4xl text-white sm:leading-14 flex items-center justify-between cursor-pointer border-2 border-prim p-5 rounded-2xl'>
 
             <motion.div
@@ -56,7 +58,8 @@ const HomeAbout = () => {
             </div>
 
           </motion.div>
-        </Link>
+        </Tilt>
+      </Link>
     </>
   )
 }

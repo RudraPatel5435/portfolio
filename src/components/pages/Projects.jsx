@@ -6,8 +6,26 @@ import ContactFloat from '../layout/ContactFloat';
 import { Circle } from 'lucide-react';
 import { projects } from '../../constants/projects';
 import { Link } from 'react-router-dom';
+import Tilt from 'react-parallax-tilt';
 
 const Projects = () => {
+    const container = {
+        hidden: {},
+        show: {
+            transition: {
+                staggerChildren: 0.1,
+            },
+        },
+    };
+
+    const child = {
+        hidden: { opacity: 0, y: 200 },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 0.6, ease: 'easeOut' },
+        },
+    };
     return (
         <>
             <Helmet>
@@ -33,61 +51,71 @@ const Projects = () => {
 
             <div className='px-3 sm:px-6 md:px-12 lg:max-w-[70%] lg:mx-auto sm:pt-10 pb-26 lg:pb-12'>
 
-                <motion.div className='flex flex-col justify-center gap-3 text-5xl'>
+                <motion.div
+                    className='flex flex-col justify-center gap-3 text-5xl'
+                    initial={{ x: -200, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ type: 'spring', damping: 10 }}
+                >
                     <div className='flex items-center gap-3'>
                         <Circle className='text-prim' />
                         <div>Projects</div>
                     </div>
                     <div className='text-lg pl-10 text-neutral-300'>
-                        Me trying WebDev
+                        Me trying WebDev. Building some clones and some original projects.
                     </div>
                 </motion.div>
 
                 <motion.div
-                    className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-15 gap-x-5 gap-y-10'
+                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-15 gap-x-5 gap-y-10"
+                    variants={container}
+                    initial="hidden"
+                    animate="show"
                 >
-
                     {projects.map((proj, idx) => (
-                        <Link
-                            to={`/project/${proj.url}`}
+                        <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={false}
                             key={idx}
-                            className="group flex flex-col gap-3 border-1 border-sec hover:border-prim rounded-lg p-4"
+                            className="group flex flex-col gap-3 hover:border-2 hover:border-prim rounded-lg p-4"
+                            // className="group flex flex-col gap-3 hover:bg-neutral-700 rounded-lg p-4"
                         >
-                            <img src={proj.img} alt="" className="rounded-md w-90" />
+                            <motion.div
+                                variants={child}
+                            >
+                                <Link
+                                    to={`/project/${proj.url}`}
+                                >
+                                    <img src={proj.img} alt={proj.name} className="rounded-md w-90 mx-auto" />
 
-                            {/* Project name container — position-relative for marquee */}
-                            <div className="relative h-[2.5rem] overflow-hidden">
-                                {/* Static name — fades out on hover */}
-                                <div className="absolute inset-0 text-2xl text-sec transition-opacity duration-300 group-hover:opacity-0 flex items-center">
-                                    {proj.name}
-                                </div>
+                                    <div className="relative h-[2.5rem] overflow-hidden">
+                                        {/* Static name */}
+                                        <div className="absolute inset-0 text-2xl text-sec transition-opacity duration-300 group-hover:opacity-0 flex items-center">
+                                            {proj.name}
+                                        </div>
 
-                                {/* Animated marquee — fades in on hover */}
-                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex items-center">
-                                    <motion.div
-                                        className="flex w-max"
-                                        animate={{ x: ['0%', '-50%'] }}
-                                        transition={{ duration: 8, ease: 'linear', repeat: Infinity }}
-                                    >
-                                        {Array(2)
-                                            .fill(0)
-                                            .map((_, i) => (
-                                                <div className="flex whitespace-nowrap" key={i}>
-                                                    {Array(4)
-                                                        .fill(0)
-                                                        .map((_, j) => (
+                                        {/* Marquee */}
+                                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex items-center">
+                                            <motion.div
+                                                className="flex w-max"
+                                                animate={{ x: ['0%', '-50%'] }}
+                                                transition={{ duration: 8, ease: 'linear', repeat: Infinity }}
+                                            >
+                                                {Array(2).fill(0).map((_, i) => (
+                                                    <div className="flex whitespace-nowrap" key={i}>
+                                                        {Array(4).fill(0).map((_, j) => (
                                                             <div className="text-2xl text-prim mx-4" key={j}>
                                                                 {proj.name}
                                                             </div>
                                                         ))}
-                                                </div>
-                                            ))}
-                                    </motion.div>
-                                </div>
-                            </div>
+                                                    </div>
+                                                ))}
+                                            </motion.div>
+                                        </div>
+                                    </div>
 
-                            <div className="text-white">{proj.one}</div>
-                        </Link>
+                                    <div className="text-white">{proj.one}</div>
+                                </Link>
+                            </motion.div>
+                        </Tilt>
                     ))}
                 </motion.div>
 

@@ -20,6 +20,15 @@
   }
 }
 
+@keyframes borderGlow {
+  0%, 100% {
+    box-shadow: 0 0 0px #FD7944;
+  }
+  50% {
+    box-shadow: 0 0 10px #FD7944;
+  }
+}
+
 :root {
   font-family: 'Trebuchet MS';
   color: #A6D1C9;
