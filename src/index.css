@@ -5,6 +5,21 @@
   --color-prim: #FD7944
 }
 
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
 :root {
   font-family: 'Trebuchet MS';
   color: #A6D1C9;
@@ -15,4 +30,3 @@
   color: #EAEDED;
   background-color: #333333;
 }
-

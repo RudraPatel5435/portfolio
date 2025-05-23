@@ -34,7 +34,22 @@ const Home = () => {
 
       <div className='px-3 sm:px-6 md:px-12 lg:max-w-[70%] lg:mx-auto sm:pt-10'>
 
-        <motion.div initial={{ y: -300 }} animate={{ y: 0 }} transition={{ delay: .5, type: 'spring', damping: 20, stiffness: 260 }} className='flex items-center justify-center text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-sec mb-16 sm:mb-24'>
+        <motion.div
+          initial={{ y: -300 }}
+          animate={{ y: 0 }}
+          whileHover={{
+            letterSpacing: "1px",
+            textShadow: "0 10px 20px rgba(253,121,68,0.6)",
+            color: "#FD7944",
+            transition: { duration: 0.3 },
+          }}
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 260,
+          }}
+          className="flex items-center justify-center text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-sec mb-16 sm:mb-24"
+        >
           {quotes[Math.floor(Math.random() * 6)]}
         </motion.div>
 
@@ -43,7 +58,7 @@ const Home = () => {
         <motion.svg
           initial={{ y: 500 }}
           animate={{ y: 0 }}
-          transition={{ delay: .4, type: "spring", damping: 18, stiffness: 200 }}
+          transition={{ type: "spring", damping: 18, stiffness: 200 }}
           className="w-full h-32 sm:mt-10"
           viewBox="0 0 1440 320"
           xmlns="http://www.w3.org/2000/svg"

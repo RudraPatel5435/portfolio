@@ -30,7 +30,7 @@ const HomeProjects = () => {
                                     <motion.div
                                         className="absolute bottom-0 left-0 h-[3px] bg-prim z-10"
                                         initial={{ width: 0 }}
-                                        whileInView={{ width: '100%'}}
+                                        whileInView={{ width: '100%' }}
                                         transition={{ duration: 0.8, ease: 'easeOut' }}
                                         viewport={{ once: true }}
                                     />
@@ -38,11 +38,37 @@ const HomeProjects = () => {
 
                                 <div className="absolute bottom-0 left-0 w-full h-0 bg-sec transition-all duration-800 group-hover:h-full z-0" />
 
-                                <div className="relative z-10 text-3xl sm:text-5xl text-white mix-blend-difference transition-colors duration-500">
-                                    {proj.name}
-                                </div>
-                                <div className="relative z-10 text-sm sm:text-base text-white mix-blend-difference transition-colors duration-500">
-                                    {`[0${idx + 1}]`}
+                                <div className="relative z-10 h-[2.5rem] sm:h-[3rem] w-full overflow-hidden group">
+
+                                    <div className="flex items-center gap-3">
+                                        <div className="text-3xl sm:text-5xl text-white group-hover:opacity-0 transition-opacity duration-300">
+                                            {proj.name}
+                                        </div>
+                                        <div className="text-white text-sm sm:text-base group-hover:opacity-0 transition-opacity duration-300">
+                                            {`[0${idx + 1}]`}
+                                        </div>
+                                    </div>
+
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex">
+                                        <motion.div
+                                            className="flex w-max animate-marquee"
+                                            animate={{ x: ['0%', '-50%'] }}
+                                            transition={{ duration: 8, ease: 'linear', repeat: Infinity }}
+                                        >
+                                            {Array(2).fill(0).map((_, i) => (
+                                                <div className="flex whitespace-nowrap" key={i}>
+                                                    {Array(8).fill(0).map((_, j) => (
+                                                        <div className="text-prim mix-blend-difference mx-4 flex items-center text-lg sm:text-2xl" key={j}>
+                                                            {proj.name}&nbsp;&nbsp;&nbsp;&nbsp;
+                                                            <div className="text-white mix-blend-difference text-sm sm:text-base">
+                                                                {`[0${idx + 1}]`}
+                                                            </div>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            ))}
+                                        </motion.div>
+                                    </div>
                                 </div>
                             </motion.div>
                         </Link>
