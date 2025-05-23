@@ -8,7 +8,7 @@ const HomeAbout = () => {
     <>
       <Link to='/about'>
         <Tilt tiltMaxAngleX={5} tiltMaxAngleY={5} glareEnable={false}>
-          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className='relative group sm:text-xl md:text-3xl lg:text-4xl text-white sm:leading-14 flex items-center justify-between cursor-pointer border-2 border-prim p-5 rounded-2xl'>
+          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className='relative group sm:text-xl md:text-3xl lg:text-4xl text-white sm:leading-14 flex items-center justify-between cursor-pointer border-2 border-prim hover:bg-prim/10 p-5 rounded-2xl'>
 
             <motion.div
               initial={{ opacity: 0, x: 50 }}

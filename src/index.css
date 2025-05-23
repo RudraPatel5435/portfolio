@@ -2,7 +2,7 @@
 
 @theme {
   --color-sec: #A6D1C9;
-  --color-prim: #FD7944
+  --color-prim: #FD7944;
 }
 
 @layer utilities {

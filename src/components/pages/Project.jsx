@@ -63,7 +63,7 @@ const Project = () => {
                 </motion.div>
 
                 <motion.div
-                    className='text-lg'
+                    className='text-lg italic mt-3'
                     variants={{ hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0 } }}
                     transition={{ duration: 0.6 }}
                 >
@@ -131,8 +131,6 @@ const Project = () => {
                                     project.tech && project.tech.map((elem, idx) => (
                                         <motion.div
                                             key={idx} className='p-2 border-1 border-white rounded-md text-white whitespace-nowrap'
-                                            whileHover={{ scale: 1.1 }}
-                                            transition={{ type: "spring", stiffness: 300 }}
                                         >
                                             {elem}
                                         </motion.div>

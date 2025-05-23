@@ -61,7 +61,7 @@ const Projects = () => {
                         <Circle className='text-prim' />
                         <div>Projects</div>
                     </div>
-                    <div className='text-lg pl-10 text-neutral-300'>
+                    <div className='text-lg pl-10 text-neutral-400 italic'>
                         Me trying WebDev. Building some clones and some original projects.
                     </div>
                 </motion.div>
@@ -75,8 +75,7 @@ const Projects = () => {
                     {projects.map((proj, idx) => (
                         <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={false}
                             key={idx}
-                            className="group flex flex-col gap-3 hover:border-2 hover:border-prim rounded-lg p-4"
-                            // className="group flex flex-col gap-3 hover:bg-neutral-700 rounded-lg p-4"
+                            className="group flex flex-col gap-3 bg-sec/10 hover:bg-prim/10 border-2 border-sec hover:border-prim rounded-lg p-4"
                         >
                             <motion.div
                                 variants={child}
@@ -112,7 +111,7 @@ const Projects = () => {
                                         </div>
                                     </div>
 
-                                    <div className="text-white">{proj.one}</div>
+                                    <div className="text-white/90">{proj.one}</div>
                                 </Link>
                             </motion.div>
                         </Tilt>
