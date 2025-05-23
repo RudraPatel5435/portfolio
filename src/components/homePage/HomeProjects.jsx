@@ -54,7 +54,7 @@ const HomeProjects = () => {
                                         </div>
                                     </div>
 
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none flex">
+                                    <div className="absolute hidden sm:flex inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
                                         <motion.div
                                             className="flex w-max animate-marquee"
                                             animate={{ x: ['0%', '-50%'] }}
