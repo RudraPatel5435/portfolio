@@ -55,7 +55,7 @@ export const projects = [
         one: "An AI-powered chat app where users interact with different personalities like a monk, an Indian mom, or a casual assistant.",
         desc: "Askify is my first crack at Next JS (I have mixed feeling about it). It lets users chat with AI personas whether you're looking for calm advice from a monk, witty responses from an Indian mom, or straightforward help from a normal assistant. It integrates Gemini API for the AI. It also allows to generate notes just by typing the topic.",
         year: "2025",
-        tech: ["Next JS", "Tailwind CSS", "Gemini API", ""],
+        tech: ["Next JS", "Tailwind CSS", "Gemini API"],
         git: "https://github.com/RudraPatel5435/askify",
         link: "https://askify-mocha.vercel.app/chat",
         img: askify
