@@ -39,7 +39,7 @@ const ContactFloat = () => {
     <motion.div
       animate={controls}
       transition={controls}
-      className="bg-neutral-600 rounded-full px-3 py-4 sm:scale-100 scale-90"
+      className="bg-neutral-600 rounded-full px-6 lg:px-3 py-4 sm:scale-100 scale-90"
     >
         <div className="flex sm:flex-row lg:flex-col justify-center items-center gap-5">
             <a href="https://www.linkedin.com/in/rudra-patel-87a941323/" target="_blank"><Linkedin size={34} className="hover:text-prim cursor-pointer" /></a>
