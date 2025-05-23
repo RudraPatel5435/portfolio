@@ -1,11 +1,11 @@
 import React from 'react'
 import Navbar from '../layout/Navbar'
 import { Helmet } from 'react-helmet'
-import HomeAbout from '../homePage/homeAbout'
 import HomeProjects from '../homePage/HomeProjects'
 import { motion } from 'motion/react'
 import { quotes } from '../../constants/quotes'
 import ContactFloat from '../layout/ContactFloat'
+import HomeAbout from '../homePage/HomeAbout'
 
 const Home = () => {
   return (
