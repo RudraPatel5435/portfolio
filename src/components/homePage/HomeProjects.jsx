@@ -40,7 +40,7 @@ const HomeProjects = () => {
 
                                 <motion.div
                                     className="relative z-10 h-[2.5rem] sm:h-[3rem] w-full overflow-hidden group"
-                                    initial={{ x: -500, opacity: 0 }}
+                                    initial={{ x: -100, opacity: 0 }}
                                     whileInView={{ x: 0, opacity: 1 }}
                                     transition={{ type: 'spring', damping: 15 }}
                                 >
