@@ -15,7 +15,7 @@ const RingLink = ({ to, label }) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <Link to={to} className="text-lg">{label}</Link>
+            <Link to={to} className="text-base sm:text-lg">{label}</Link>
             <div className="w-5 h-5 rounded-full flex items-center justify-center">
                 <svg viewBox="-23 -23 150 150" className="w-full h-full">
                     <motion.circle
@@ -56,7 +56,7 @@ const Navbar = () => {
     };
     return (
         <motion.div
-            className="flex items-center justify-between md:py-6 md:px-82 md:mb-16"
+            className="flex items-start sm:items-center justify-between px-3 sm:px-6 py-6 md:px-14 lg:w-[70%] lg:mx-auto mb-6 sm:mb-16"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -71,7 +71,7 @@ const Navbar = () => {
                     transition={{ delay: 0.2, duration: 0.5 }}
                 />
                 <motion.div
-                    className='text-3xl font-mono'
+                    className='text-lg sm:text-3xl font-mono'
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3, duration: 0.6 }}
@@ -81,7 +81,7 @@ const Navbar = () => {
             </Link>
 
             <motion.div
-                className="flex items-center justify-between gap-6"
+                className="flex items-center justify-between gap-3 sm:gap-6"
                 variants={navVariants}
                 initial="hidden"
                 animate="show"

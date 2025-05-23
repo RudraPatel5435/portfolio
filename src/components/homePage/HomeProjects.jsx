@@ -1,0 +1,59 @@
+import { Circle } from 'lucide-react'
+import { motion } from 'motion/react'
+import React from 'react'
+import { projects } from '../../constants/projects'
+import { Link } from 'react-router-dom'
+
+const HomeProjects = () => {
+    return (
+        <div className='mt-14 sm:mt-30 pb-25 sm:pb-10'>
+            <motion.div initial={{ x: -200, opacity: 0 }} whileInView={{ x: 0, opacity: 1 }} transition={{ duration: .5 }} viewport={{ once: true }} className='flex items-center gap-3 text-3xl sm:text-4xl'>
+                <Circle className='text-prim' />
+                Projects
+            </motion.div>
+            <div className='flex flex-col mt-12'>
+                {
+                    projects.slice(0, 4).map((proj, idx) => (
+                        <Link key={idx} to={`/project/${proj.url}`}>
+                            <motion.div
+                                className={`group relative py-5 flex gap-3 overflow-hidden`}
+                            >
+                                <motion.div
+                                    className="absolute top-0 left-0 h-[3px] bg-prim z-10"
+                                    initial={{ width: 0 }}
+                                    whileInView={{ width: '100%' }}
+                                    transition={{ duration: 0.8, ease: 'easeOut' }}
+                                    viewport={{ once: true }}
+                                />
+
+                                {idx === 3 && (
+                                    <motion.div
+                                        className="absolute bottom-0 left-0 h-[3px] bg-prim z-10"
+                                        initial={{ width: 0 }}
+                                        whileInView={{ width: '100%'}}
+                                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                                        viewport={{ once: true }}
+                                    />
+                                )}
+
+                                <div className="absolute bottom-0 left-0 w-full h-0 bg-sec transition-all duration-800 group-hover:h-full z-0" />
+
+                                <div className="relative z-10 text-3xl sm:text-5xl text-white mix-blend-difference transition-colors duration-500">
+                                    {proj.name}
+                                </div>
+                                <div className="relative z-10 text-sm sm:text-base text-white mix-blend-difference transition-colors duration-500">
+                                    {`[0${idx + 1}]`}
+                                </div>
+                            </motion.div>
+                        </Link>
+                    ))
+                }
+                <Link to='projects' className='mt-8 text-lg text-sec hover:text-prim'>
+                    {`View All -->`}
+                </Link>
+            </div>
+        </div>
+    )
+}
+
+export default HomeProjects

@@ -1,67 +1,81 @@
 import React from 'react'
-import { motion } from 'framer-motion'
 import Navbar from '../layout/Navbar'
-import me from '../../assets/me.jpeg'
-import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
+import HomeAbout from '../homePage/homeAbout'
+import HomeProjects from '../homePage/HomeProjects'
+import { motion } from 'motion/react'
+import { quotes } from '../../constants/quotes'
+import ContactFloat from '../layout/ContactFloat'
 
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>Rudra</title>
+      </Helmet>
+
       <Navbar />
-      <div className='px-82'>
-        <Link to='/about'>
-          <motion.div whileHover={{scale: 1.03}} whileTap={{scale: 0.97}} className='relative group text-4xl text-white leading-14 flex items-center justify-between cursor-pointer hover:border-2 border-prim p-5 rounded-2xl'>
 
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: 'easeOut' }}
-            >
-              <div className='mb-6'>
-                I am <span className='text-prim text-5xl'>Rudra Patel</span><br />
-                A <span className='text-prim text-5xl'>Full Stack</span><br />
-                developer and<br />
-                <span className='text-prim text-5xl'>Computer Science</span><br />
-                Sophomore
-              </div>
-            </motion.div>
+      <motion.div
+        initial={{ x: -50, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.6,
+          type: 'spring',
+          damping: 10,
+          stiffness: 130,
+        }}
+        className="fixed z-100 
+                    bottom-5 left-1/2 -translate-x-1/2 
+                    lg:translate-y-1/2 lg:left-5 lg:translate-x-0 lg:bottom-1/2"
+      >
+        <ContactFloat />
+      </motion.div>
 
-            <motion.img
-              className='h-100 rounded-xl'
-              src={me}
-              alt="Rudra"
-              initial={{ opacity: 0, x: 50, rotateY: 90 }}
-              animate={{ opacity: 1, x: 0, rotateY: 0 }}
-              transition={{ duration: 1, ease: 'easeOut', delay: 0.3 }}
-              style={{ transformOrigin: '0% 50%' }} 
+      <div className='px-3 sm:px-6 md:px-12 lg:max-w-[70%] lg:mx-auto sm:pt-10'>
+
+        <motion.div initial={{ y: -300 }} animate={{ y: 0 }} transition={{ delay: .5, type: 'spring', damping: 20, stiffness: 260 }} className='flex items-center justify-center text-2xl sm:text-3xl md:text-4xl lg:text-6xl text-sec mb-16 sm:mb-24'>
+          {quotes[Math.floor(Math.random() * 6)]}
+        </motion.div>
+
+        <HomeAbout />
+
+        <motion.svg
+          initial={{ y: 500 }}
+          animate={{ y: 0 }}
+          transition={{ delay: .4, type: "spring", damping: 18, stiffness: 200 }}
+          className="w-full h-32 sm:mt-10"
+          viewBox="0 0 1440 320"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#A6D1C9"
+            fillOpacity="1"
+            d="
+      M0,220 
+      C360,300, 1080,140, 1440,220 
+      V320H0Z
+    "
+          >
+            <animate
+              attributeName="d"
+              dur="6s"
+              repeatCount="indefinite"
+              values="
+        M0,220 C360,300,1080,140,1440,220 V320H0Z;
+        M0,260 C360,180,1080,300,1440,260 V320H0Z;
+        M0,200 C360,240,1080,200,1440,220 V320H0Z;
+        M0,220 C360,160,1080,280,1440,200 V320H0Z;
+        M0,240 C360,260,1080,160,1440,250 V320H0Z;
+        M0,220 C360,300,1080,140,1440,220 V320H0Z
+      "
             />
+          </path>
+        </motion.svg>
 
-            <div className="absolute -bottom-14 left-0 w-full overflow-hidden bg-transparent h-10 group-hover:block hidden">
-              <motion.div
-                className="flex whitespace-nowrap text-prim text-xl"
-                animate={{ x: ['0%', '-100%'] }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: 'loop',
-                  duration: 10,
-                  ease: 'linear',
-                }}
-              >
-                <div className="flex">
-                  {Array(8).fill().map((_, i) => (
-                    <span className="mx-4" key={i}>About me &nbsp;&nbsp; • </span>
-                  ))}
-                </div>
-                <div className="flex">
-                  {Array(8).fill().map((_, i) => (
-                    <span className="mx-4" key={`dup-${i}`}>About me &nbsp;&nbsp; •</span>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
+        <HomeProjects />
 
-          </motion.div>
-        </Link>
       </div>
     </>
   )
