@@ -1,5 +1,5 @@
 import { motion, useAnimation } from "framer-motion";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Newspaper, Twitter, Youtube } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const ContactFloat = () => {
@@ -42,10 +42,11 @@ const ContactFloat = () => {
       className="bg-neutral-600 rounded-full px-6 lg:px-3 py-4 sm:scale-100 scale-90"
     >
         <div className="flex sm:flex-row lg:flex-col justify-center items-center gap-5">
-            <a href="https://www.linkedin.com/in/rudra-patel-87a941323/" target="_blank"><Linkedin size={34} className="hover:text-prim cursor-pointer" /></a>
+            <a href="https://www.youtube.com/@snailScript" target="_blank"><Youtube size={34} className="hover:text-prim cursor-pointer" /></a>
             <a href="https://github.com/RudraPatel5435" target="_blank"><Github size={34} className="hover:text-prim cursor-pointer"/></a>
             <a href="https://x.com/RudraPatel5435" target="_blank"><Twitter size={34} className="hover:text-prim cursor-pointer" /></a>
-            <a href="mailto:rudranpatel0980@gmail.com"><Mail size={34} className="hover:text-prim cursor-pointer" /></a>
+            <a href="https://www.linkedin.com/in/rudra-patel-87a941323/" target="_blank"><Linkedin size={34} className="hover:text-prim cursor-pointer" /></a>
+            <a href="https://rudrapatel.substack.com/" target="_blank"><Newspaper size={34} className="hover:text-prim cursor-pointer" /></a>
         </div>
     </motion.div>
   );
