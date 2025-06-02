@@ -14,7 +14,8 @@ export const projects = [
         tech: ["Next JS", "Tailwind CSS", "Gemini API"],
         git: "https://github.com/RudraPatel5435/askify",
         link: "https://askify-mocha.vercel.app/chat",
-        img: askify
+        img: askify,
+        color: "hover:bg-[#8E76D2]/30 border-[#8E76D2]"
     },
     {
         name: "Vibe Zone",
@@ -25,7 +26,8 @@ export const projects = [
         tech: ["Javascript", "ExpressJS", "Socket.io", "Tailwind CSS"],
         git: "https://github.com/RudraPatel5435/Vibe-Zone",
         link: 'https://vibe-zone-tan.vercel.app/',
-        img: vibe
+        img: vibe,
+        color: "hover:bg-[#587A83]/30 border-[#587A83]"
     },
     {
         name: "Express Files",
@@ -36,7 +38,8 @@ export const projects = [
         tech: ["Javascript", "ExpressJS", "Tailwind CSS"],
         git: "https://github.com/RudraPatel5435/ExpressFiles",
         link: "",
-        img: express
+        img: express,
+        color: "hover:bg-[#47A99A]/30 border-[#47A99A]"
     },
     {
         name: "Pop the Blue",
@@ -47,7 +50,8 @@ export const projects = [
         tech: ["MERN", "Auth0", "Tailwind CSS"],
         git: "https://github.com/Harshil000/2-Devs",
         link: "https://2-devs.vercel.app/",
-        img: poptheblue
+        img: poptheblue,
+        color: "hover:bg-[#1B1B1B]/30 border-[#1B1B1B]"
     },
     {
         name: "Quizia",
@@ -58,6 +62,7 @@ export const projects = [
         tech: ["MERN", "Tailwind CSS", "Toastify"],
         git: "https://github.com/RudraPatel5435/Quizia",
         link: "",
-        img: quizia
+        img: quizia,
+        color: "hover:bg-[#52575D]/30 border-[#52575D]"
     },
 ]

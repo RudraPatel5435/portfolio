@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from "framer-motion";
 import Navbar from '../layout/Navbar'
 import { Helmet } from 'react-helmet';
@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import Tilt from 'react-parallax-tilt';
 
 const Projects = () => {
+    const bgColor = projects.map(proj => proj.color)
     const container = {
         hidden: {},
         show: {
@@ -75,7 +76,7 @@ const Projects = () => {
                     {projects.map((proj, idx) => (
                         <Tilt tiltMaxAngleX={10} tiltMaxAngleY={10} glareEnable={false}
                             key={idx}
-                            className="group flex flex-col gap-3 bg-sec/10 hover:bg-prim/10 border-2 border-sec hover:border-prim rounded-lg p-4"
+                            className={`group flex flex-col gap-3  border-2 ${bgColor[idx]} rounded-lg p-4`}
                         >
                             <motion.div
                                 variants={child}
